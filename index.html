@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The iPhone Experience Loop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="main-title">Mapping the life of a product experience</h1>
+            <p class="subtitle">Re-imagining the Product Life Cycle</p>
+            <p class="helper-text">
+                Brands don't fail because their stories are weak.<br>
+                They fail because the experience never lives up to the promise.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Interactive Section -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Controls -->
+            <div class="controls">
+                <button id="toggleJourneyBtn" class="toggle-btn" aria-label="Toggle Hero's Journey Version">
+                    <span class="toggle-label">Current State</span>
+                    <span class="toggle-switch"></span>
+                    <span class="toggle-label">iPhone as Hero</span>
+                </button>
+                <button id="resetBtn" class="reset-btn" aria-label="Reset all selections">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                        <path d="M21 3v5h-5"></path>
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                        <path d="M3 21v-5h5"></path>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <!-- Three Column Layout -->
+            <div class="three-column-layout">
+                <!-- Left Prism -->
+                <section class="prism-section" aria-label="Apple as Apple sees itself">
+                    <h2 class="prism-title">Apple sees itself</h2>
+                    <div class="prism prism-left" id="prismLeft">
+                        <div class="facet" data-facet="physique" data-side="left">
+                            <span class="facet-label">Physique</span>
+                        </div>
+                        <div class="facet" data-facet="personality" data-side="left">
+                            <span class="facet-label">Personality</span>
+                        </div>
+                        <div class="facet" data-facet="culture" data-side="left">
+                            <span class="facet-label">Culture</span>
+                        </div>
+                        <div class="facet" data-facet="relationship" data-side="left">
+                            <span class="facet-label">Relationship</span>
+                        </div>
+                        <div class="facet" data-facet="reflection" data-side="left">
+                            <span class="facet-label">Reflection</span>
+                        </div>
+                        <div class="facet" data-facet="self-image" data-side="left">
+                            <span class="facet-label">Self-Image</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Center: Hero's Journey Loop -->
+                <section class="loop-section" aria-label="Hero's Journey Loop">
+                    <div class="loop-container">
+                        <div class="gap-label">THE GAP</div>
+                        <svg class="hero-loop" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                            <!-- Circle outline -->
+                            <circle cx="250" cy="250" r="140" fill="none" stroke="#e5e5e5" stroke-width="2"/>
+                            
+                            <!-- Center iPhone emoji/icon -->
+                            <text x="250" y="260" text-anchor="middle" font-size="48" class="center-icon">📱</text>
+                            
+                            <!-- Hero Journey Nodes (6 nodes around circle) -->
+                            <!-- Node 1: Ordinary World (top) -->
+                            <g class="node" data-node="ordinary" transform="translate(250, 90)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="-50" text-anchor="middle" class="node-label">The Ordinary<tspan x="0" dy="18">World</tspan></text>
+                            </g>
+                            
+                            <!-- Node 2: Call to Adventure (top-right) -->
+                            <g class="node" data-node="call" transform="translate(371, 149)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="-50" text-anchor="middle" class="node-label">The Call to<tspan x="0" dy="18">Adventure</tspan></text>
+                            </g>
+                            
+                            <!-- Node 3: Crossing Threshold (bottom-right) -->
+                            <g class="node" data-node="threshold" transform="translate(371, 351)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="50" text-anchor="middle" class="node-label">Crossing the<tspan x="0" dy="18">Threshold</tspan></text>
+                            </g>
+                            
+                            <!-- Node 4: Transformation (bottom) -->
+                            <g class="node" data-node="transformation" transform="translate(250, 410)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="55" text-anchor="middle" class="node-label">Transformation</text>
+                            </g>
+                            
+                            <!-- Node 5: Ultimate Boon (bottom-left) -->
+                            <g class="node" data-node="boon" transform="translate(129, 351)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="50" text-anchor="middle" class="node-label">The Ultimate<tspan x="0" dy="18">Boon</tspan></text>
+                            </g>
+                            
+                            <!-- Node 6: Return (top-left) -->
+                            <g class="node" data-node="return" transform="translate(129, 149)">
+                                <circle r="24" fill="white" stroke="#1d1d1f" stroke-width="2"/>
+                                <text y="-50" text-anchor="middle" class="node-label">The Return</text>
+                            </g>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- Right Prism -->
+                <section class="prism-section" aria-label="Apple as people live it">
+                    <h2 class="prism-title">People live it</h2>
+                    <div class="prism prism-right" id="prismRight">
+                        <div class="facet" data-facet="physique" data-side="right">
+                            <span class="facet-label">Physique</span>
+                        </div>
+                        <div class="facet" data-facet="personality" data-side="right">
+                            <span class="facet-label">Personality</span>
+                        </div>
+                        <div class="facet" data-facet="culture" data-side="right">
+                            <span class="facet-label">Culture</span>
+                        </div>
+                        <div class="facet" data-facet="relationship" data-side="right">
+                            <span class="facet-label">Relationship</span>
+                        </div>
+                        <div class="facet" data-facet="reflection" data-side="right">
+                            <span class="facet-label">Reflection</span>
+                        </div>
+                        <div class="facet" data-facet="self-image" data-side="right">
+                            <span class="facet-label">Self-Image</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Explainer Cards -->
+            <div id="explainerCard" class="explainer-card" aria-live="polite"></div>
+            
+            <!-- Alignment Indicator -->
+            <div id="alignmentIndicator" class="alignment-indicator" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <!-- Strategy Section -->
+    <section class="strategy-section">
+        <div class="container">
+            <h2 class="strategy-title">Re-imagining the Product Life Cycle</h2>
+            <p class="strategy-intro">
+                The Hero's Journey provides a powerful framework for understanding how brands evolve from surface-level expression to meaningful customer transformation. This approach maps the entire lifecycle of product experience, revealing the critical moments where perception shifts and loyalty deepens.
+            </p>
+            <div class="strategy-content">
+                <p class="strategy-text">
+                    It begins with identifying the cultural tension—the gap between what brands promise and what customers actually experience. From there, strategic choices emerge: the decision to pursue authenticity over amplification, to design behaviors and experiences that reshape perception rather than simply repeat messaging.
+                </p>
+                <p class="strategy-text">
+                    Each stage of the journey represents an opportunity to close the gap between product expression and product experience, transforming routine interactions into moments of genuine connection.
+                </p>
+            </div>
+            <p class="strategy-highlight">
+                The result transcends louder marketing. It delivers clearer meaning, stronger loyalty, and experiences that finally fulfill the promise.
+            </p>
+        </div>
+    </section>
+
+    <!-- Flashcard Section -->
+    <section class="flashcard-section">
+        <div class="container">
+            <h2 class="section-title">Deep Dive: Research Roadmap</h2>
+            <div class="flashcard-grid">
+                <div class="flashcard" data-card="a">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>A</h3>
+                            <p>Experts to Speak With</p>
+                            <span class="expand-icon">+</span>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Experts to Speak With</h3>
+                            <ul id="flashcardContentA"></ul>
+                            <p class="flashcard-note">Why they matter: They explain where meaning decays and how it gets renewed.</p>
+                            <span class="collapse-icon">−</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" data-card="b">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>B</h3>
+                            <p>Events / Places / Companies / People to Visit</p>
+                            <span class="expand-icon">+</span>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Where to Go (Next 10 Weeks)</h3>
+                            <ul id="flashcardContentB"></ul>
+                            <p class="flashcard-note">What you're looking for: Decision moments, trust moments, and where fatigue shows up.</p>
+                            <span class="collapse-icon">−</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" data-card="c">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>C</h3>
+                            <p>Feeds / Channels / Reading Categories</p>
+                            <span class="expand-icon">+</span>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Content to Track</h3>
+                            <ul id="flashcardContentC"></ul>
+                            <p class="flashcard-note">Signals to track: Trust drift, boredom cues, coercion-by-network effects, AI expectation gaps.</p>
+                            <span class="collapse-icon">−</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="container">
+            <h2 class="section-title">Answer to the Burning Question</h2>
+            <div class="final-content">
+                <div class="question-block">
+                    <h3>How do people really feel about iPhones today?</h3>
+                    <p id="finalParagraph1"></p>
+                </div>
+                <div class="question-block">
+                    <h3>What could Apple do to resonate more?</h3>
+                    <p id="finalParagraph2"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>The challenge now is not invention, but renewal.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
