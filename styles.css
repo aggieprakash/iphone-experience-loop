@@ -1,0 +1,1065 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #1d1d1f;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+    padding: 80px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+    line-height: 1.1;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: #6e6e73;
+    margin-bottom: 32px;
+    line-height: 1.3;
+}
+
+.helper-text {
+    font-size: 1.125rem;
+    color: #86868b;
+    line-height: 1.75;
+    letter-spacing: -0.005em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   CONTROLS
+   ============================================ */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #1d1d1f;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.toggle-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #d2d2d7;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.active .toggle-switch {
+    background: #0071e3;
+}
+
+.toggle-btn.active .toggle-switch::after {
+    transform: translateX(20px);
+}
+
+.toggle-label {
+    font-weight: 500;
+}
+
+.toggle-btn.active .toggle-label:first-child {
+    opacity: 0.5;
+}
+
+.toggle-btn:not(.active) .toggle-label:last-child {
+    opacity: 0.5;
+}
+
+.reset-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #f5f5f7;
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   THREE COLUMN LAYOUT
+   ============================================ */
+.main-content {
+    padding: 60px 0;
+}
+
+.three-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 48px;
+}
+
+/* ============================================
+   PRISM SECTIONS
+   ============================================ */
+.prism-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.prism-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #1d1d1f;
+    line-height: 1.3;
+}
+
+.prism {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.facet {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+    border: 1px solid #d2d2d7;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.facet:hover {
+    background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.facet.active {
+    background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
+    color: white;
+    border-color: #0071e3;
+    transform: scale(1.05);
+}
+
+.facet-label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.005em;
+    line-height: 1.3;
+}
+
+/* ============================================
+   HERO'S JOURNEY LOOP
+   ============================================ */
+.loop-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loop-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.gap-label {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    background: white;
+    border: 2px solid #1d1d1f;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #1d1d1f;
+    z-index: 10;
+}
+
+.hero-loop {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node circle {
+    transition: all 0.3s ease;
+}
+
+.node:hover circle {
+    fill: #f5f5f7;
+    stroke-width: 3;
+    r: 26;
+}
+
+.node.active circle {
+    fill: #0071e3;
+    stroke: #0071e3;
+}
+
+.node.active text {
+    fill: white;
+}
+
+.node-label {
+    font-size: 13px;
+    font-weight: 500;
+    fill: #1d1d1f;
+    transition: fill 0.3s ease;
+    letter-spacing: 0.01em;
+}
+
+.node-label tspan {
+    letter-spacing: 0.01em;
+}
+
+.center-icon {
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ============================================
+   EXPLAINER CARD
+   ============================================ */
+.explainer-card {
+    max-width: 800px;
+    margin: 48px auto;
+    padding: 40px;
+    background: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: none;
+    animation: fadeInUp 0.4s ease;
+}
+
+.explainer-card.visible {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.explainer-card h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin-bottom: 28px;
+    color: #1d1d1f;
+}
+
+.explainer-card ul {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.explainer-card li {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    letter-spacing: -0.003em;
+    color: #1d1d1f;
+    margin-bottom: 14px;
+    padding-left: 28px;
+    position: relative;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.explainer-card li::before {
+    content: '•';
+    position: absolute;
+    left: 10px;
+    color: #0071e3;
+    font-weight: bold;
+}
+
+.explainer-card .so-what {
+    padding: 24px;
+    background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+    border-left: 4px solid #0071e3;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #1d1d1f;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    letter-spacing: -0.003em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.facet-description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    letter-spacing: -0.003em;
+    color: #1d1d1f;
+    margin-bottom: 18px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* ============================================
+   ALIGNMENT INDICATOR
+   ============================================ */
+.alignment-indicator {
+    max-width: 600px;
+    margin: 24px auto;
+    padding: 24px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 2px solid #0071e3;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+    animation: fadeInUp 0.4s ease;
+}
+
+.alignment-indicator.visible {
+    display: block;
+}
+
+.alignment-indicator h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0071e3;
+}
+
+.alignment-indicator p {
+    font-size: 1rem;
+    color: #1d1d1f;
+    line-height: 1.6;
+}
+
+.alignment-level {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #0071e3;
+}
+
+/* ============================================
+   STRATEGY SECTION
+   ============================================ */
+.strategy-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+}
+
+.strategy-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-align: center;
+    color: #1d1d1f;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strategy-intro {
+    font-size: 1.375rem;
+    line-height: 1.65;
+    letter-spacing: -0.007em;
+    color: #1d1d1f;
+    max-width: 800px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.strategy-content {
+    max-width: 900px;
+    margin: 0 auto 56px;
+}
+
+.strategy-text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    letter-spacing: -0.004em;
+    color: #1d1d1f;
+    margin-bottom: 28px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.strategy-text:last-child {
+    margin-bottom: 0;
+}
+
+.strategy-highlight {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #1d1d1f;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 32px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   FLASHCARD SECTION
+   ============================================ */
+.flashcard-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 64px;
+    color: #1d1d1f;
+}
+
+.flashcard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.flashcard {
+    perspective: 1000px;
+    min-height: 280px;
+    cursor: pointer;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 32px;
+    background: white;
+    border: 2px solid #d2d2d7;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    min-height: 280px;
+}
+
+.flashcard-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flashcard-front h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0071e3;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.flashcard-front p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+}
+
+.expand-icon {
+    font-size: 2rem;
+    color: #0071e3;
+    margin-top: 16px;
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+
+.flashcard-back h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    color: #1d1d1f;
+}
+
+.flashcard-back ul {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.flashcard-back li {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    letter-spacing: -0.002em;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.flashcard-back li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #0071e3;
+    font-weight: bold;
+}
+
+.flashcard-note {
+    padding: 18px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #6e6e73;
+    line-height: 1.6;
+    letter-spacing: -0.002em;
+}
+
+.collapse-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    color: #86868b;
+}
+
+/* ============================================
+   FINAL SECTION
+   ============================================ */
+.final-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+}
+
+.final-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.question-block {
+    margin-bottom: 48px;
+    padding: 40px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.question-block h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    color: #1d1d1f;
+}
+
+.question-block p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    letter-spacing: -0.004em;
+    color: #1d1d1f;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    padding: 60px 0;
+    background: #1d1d1f;
+    color: white;
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 1.125rem;
+    font-style: italic;
+    letter-spacing: -0.003em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    background: #0071e3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+.back-to-top:hover {
+    background: #0077ed;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 113, 227, 0.4);
+}
+
+.back-to-top svg {
+    stroke: white;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .three-column-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .loop-section {
+        order: -1;
+    }
+    
+    .prism {
+        margin: 0 auto;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        letter-spacing: -0.018em;
+    }
+    
+    .strategy-title {
+        font-size: 2rem;
+        letter-spacing: -0.018em;
+    }
+    
+    .strategy-intro {
+        font-size: 1.25rem;
+    }
+    
+    .strategy-text {
+        font-size: 1.0625rem;
+    }
+    
+    .strategy-highlight {
+        font-size: 1.375rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .site-header {
+        padding: 60px 0 40px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+        letter-spacing: -0.018em;
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+        letter-spacing: -0.008em;
+    }
+    
+    .helper-text {
+        font-size: 1rem;
+        letter-spacing: -0.003em;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .toggle-btn,
+    .reset-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .three-column-layout {
+        gap: 32px;
+    }
+    
+    .prism {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .explainer-card {
+        padding: 28px;
+    }
+    
+    .explainer-card h3 {
+        font-size: 1.5rem;
+        letter-spacing: -0.012em;
+    }
+    
+    .explainer-card li,
+    .explainer-card .so-what,
+    .facet-description {
+        text-align: left;
+        hyphens: none;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        letter-spacing: -0.015em;
+        margin-bottom: 40px;
+    }
+    
+    .flashcard-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .strategy-section {
+        padding: 80px 0;
+    }
+    
+    .strategy-title {
+        font-size: 1.75rem;
+        letter-spacing: -0.015em;
+        margin-bottom: 32px;
+    }
+    
+    .strategy-intro {
+        font-size: 1.125rem;
+        text-align: left;
+        margin-bottom: 36px;
+    }
+    
+    .strategy-text {
+        font-size: 1.0625rem;
+        text-align: left;
+        hyphens: none;
+        margin-bottom: 24px;
+    }
+    
+    .strategy-highlight {
+        font-size: 1.25rem;
+        letter-spacing: -0.008em;
+        padding: 32px 24px;
+    }
+    
+    .question-block {
+        padding: 28px;
+    }
+    
+    .question-block h3 {
+        font-size: 1.5rem;
+        letter-spacing: -0.012em;
+    }
+    
+    .question-block p {
+        font-size: 1rem;
+        text-align: left;
+        hyphens: none;
+    }
+    
+    .back-to-top {
+        width: 48px;
+        height: 48px;
+        bottom: 24px;
+        right: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .main-title {
+        font-size: 1.75rem;
+        letter-spacing: -0.015em;
+    }
+    
+    .subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .helper-text {
+        font-size: 0.9375rem;
+    }
+    
+    .gap-label {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+        letter-spacing: 0.03em;
+    }
+    
+    .node-label {
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+    
+    .loop-container {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+    
+    .strategy-title {
+        font-size: 1.5rem;
+    }
+    
+    .strategy-intro {
+        font-size: 1rem;
+    }
+    
+    .strategy-text {
+        font-size: 1rem;
+    }
+    
+    .strategy-highlight {
+        font-size: 1.125rem;
+        padding: 28px 20px;
+    }
+    
+    .explainer-card {
+        padding: 24px;
+    }
+    
+    .question-block {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .node-label {
+        font-size: 12px;
+    }
+    
+    .loop-container {
+        max-width: 420px;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+   
+/* Prevent widows and orphans */
+p {
+    orphans: 3;
+    widows: 3;
+}
+
+/* Prevent awkward breaks */
+h1, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Better word wrapping */
+.helper-text,
+.strategy-intro,
+.strategy-text,
+.strategy-highlight,
+.question-block p,
+.explainer-card li,
+.explainer-card .so-what,
+.facet-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Improved optical alignment */
+.three-column-layout {
+    align-items: start;
+}
+
+.prism-section {
+    align-self: start;
+}
+
+/* Better visual hierarchy */
+.strategy-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strategy-content {
+    width: 100%;
+}
+
+/* Ensure consistent spacing */
+.strategy-text + .strategy-text {
+    margin-top: 0;
+}
